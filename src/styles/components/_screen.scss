@@ -1,0 +1,12 @@
+.screen {
+  background-color: $t-one-screen-bg;
+  margin-top: 50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 20px;
+  overflow: hidden;
+  .number {
+    font-size: 3rem !important;
+  }
+}

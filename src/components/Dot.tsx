@@ -1,4 +1,4 @@
 const Dot = () => {
-  return <div>Dot</div>;
+  return <button>.</button>;
 };
 export default Dot;

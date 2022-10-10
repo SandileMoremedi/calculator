@@ -1,5 +1,5 @@
 const Minus = () => {
-  return <div>Minus</div>;
+  return <button>-</button>;
 };
 
 export default Minus;

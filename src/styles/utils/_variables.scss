@@ -1,0 +1,94 @@
+// THEME ONE
+
+// BACKGROUNDS:
+
+// Main background
+$t-one-bg: hsl(222, 26%, 31%);
+// Toggle background, keypad background
+$t-one-keypad-bg: hsl(223, 31%, 20%);
+// Screen background
+$t-one-screen-bg: hsl(224, 36%, 15%);
+
+// KEYS:
+
+// Key background
+$t-one-key-bg-hover: hsl(30, 25%, 89%);
+$t-one-key-shadow: hsl(28, 16%, 65%);
+
+// Delete background
+$t-one-delete-bg: hsl(225, 21%, 49%);
+$t-one-delete-hover: hsl(224, 28%, 35%);
+
+// Equal and toggle background
+$t-one-equal-bg: hsl(6, 70%, 34%);
+$t-one-equal-bg-hover: hsl(6, 63%, 50%);
+
+// TEXT:
+
+// Keys Text Color
+$t-one-key-text: hsl(221, 14%, 31%);
+// Screen Text Color
+$t-one-screen-text: hsl(0, 0%, 100%);
+
+// THEME TWO
+
+// BACKGROUNDS
+
+// Main Background
+$t-two-main-bg: hsl(0, 0%, 90%);
+// Toggle and keypad background
+$t-two-keypad-bg: hsl(0, 5%, 81%);
+// Screen background
+$t-two-screen-bg: hsl(0, 0%, 93%);
+
+// KEYS
+
+// Key background hover
+$t-two-key-bg-hover: hsl(45, 7%, 89%);
+$t-two-key-shadow: hsl(35, 11%, 61%);
+
+// Delete background
+$t-two-delete: hsl(185, 42%, 37%);
+$t-two-delete-shadow: hsl(185, 58%, 25%);
+
+// Equal and toggle background
+$t-two-equal-bg: hsl(25, 98%, 40%);
+$t-two-equal-shadow: hsl(25, 99%, 27%);
+
+// TEXT
+// Keys text
+$t-one-key-color: hsl(60, 10%, 19%);
+// Screen Text
+$t-two-screen-text: hsl(0, 0%, 100%);
+
+// THEME THREE
+
+// BACKGROUNDS
+
+// Main Background
+$t-three-main-bg: hsl(268, 75%, 9%);
+// Toggle background, keypad background and screen background
+$t-three-keypad-bg: hsl(268, 71%, 12%);
+
+// KEYS
+
+// Delete background
+$t-three-delete: hsl(281, 89%, 26%);
+$t-three-delete-hover: hsl(285, 91%, 52%);
+
+// Equal background
+$t-three-equal: hsl(176, 100%, 44%);
+$t-three-equal-hover: hsl(177, 92%, 70%);
+
+// Keys background
+$t-three-key: hsl(268, 47%, 21%);
+$t-three-key-shadow: hsl(290, 70%, 36%);
+
+// TEXT
+
+// Keys Text
+$t-three-key-text: hsl(52, 100%, 62%);
+// Equal Text
+$t-three-equal-text: hsl(198, 20%, 13%);
+// Delete Text
+$t-three-delete-text: hsl(0, 0%, 100%);

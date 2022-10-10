@@ -1,5 +1,5 @@
 const Equal = () => {
-  return <div>Equal</div>;
+  return <button> =</button>;
 };
 
 export default Equal;

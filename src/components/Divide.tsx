@@ -1,5 +1,5 @@
 const Divide = () => {
-  return <div>Divide</div>;
+  return <button>/</button>;
 };
 
 export default Divide;

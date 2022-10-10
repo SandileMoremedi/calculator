@@ -2,7 +2,13 @@
 @import "./base/typography";
 
 @import "./layout/container";
+@import "./layout/theme_one";
+@import "./layout/theme_two";
+@import "./layout/theme_three";
 
+@import "./components/top";
 @import "./components/buttons";
+@import "./components/screen";
+@import "./components/keypad";
 
 @import "./utils/variables";

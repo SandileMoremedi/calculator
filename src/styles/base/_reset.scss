@@ -1,0 +1,13 @@
+@import "../utils/variables";
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+// Default Settings
+body {
+  background-color: $t-one-bg;
+  color: $t-one-screen-text;
+}
