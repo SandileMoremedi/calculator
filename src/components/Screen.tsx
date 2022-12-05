@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from "react";
-// interface screen {
-
-// }
-const Screen: React.FC = () => {
-  const [currentNumber, currentNumberSet] = useState(0);
-  const [previousNumber, previousNumberSet] = useState(0);
+interface Screen {
+  currentNumber: string;
+  previousNumber: string;
+  numberOnScreen: string;
+}
+const Screen: React.FC<Screen> = ({
+  currentNumber,
+  previousNumber,
+  numberOnScreen,
+}) => {
   return (
     <div className="screen">
-      <p className="number">{currentNumber}</p>
+      {numberOnScreen == "currentNumber" ? (
+        <p className="number">{currentNumber}</p>
+      ) : (
+        <p className="number">{previousNumber}</p>
+      )}
     </div>
   );
 };
