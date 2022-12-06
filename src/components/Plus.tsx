@@ -7,6 +7,7 @@ interface Plus {
   numberOnScreenSet: React.Dispatch<React.SetStateAction<string>>;
   operatorSet: React.Dispatch<React.SetStateAction<string>>;
   operator: string;
+  previousNumber: string;
 }
 const Plus: React.FC<Plus> = ({
   currentNumberSet,
@@ -15,14 +16,21 @@ const Plus: React.FC<Plus> = ({
   numberOnScreenSet,
   operatorSet,
   operator,
+  previousNumber,
 }) => {
   return (
     <button
       onClick={() => {
-        previousNumberSet(currentNumber);
-        currentNumberSet("0");
-        numberOnScreenSet("previousNumber");
-        operatorSet("plus");
+        if (previousNumber == "0") {
+          previousNumberSet(currentNumber);
+          currentNumberSet("0");
+          numberOnScreenSet("previousNumber");
+          operatorSet("plus");
+        } else {
+          // previousNumberSet(currentNumber);
+          currentNumberSet("0");
+          operatorSet("plus");
+        }
       }}
     >
       +

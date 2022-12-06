@@ -88,6 +88,7 @@ const App = () => {
               numberOnScreenSet={numberOnScreenSet}
               operatorSet={operatorSet}
               operator={operator}
+              previousNumber={previousNumber}
             />
           </Row>
           <Row number="four">
@@ -130,7 +131,11 @@ const App = () => {
             <Multiply />
           </Row>
           <Row number="two">
-            <Reset />
+            <Reset
+              previousNumberSet={previousNumberSet}
+              numberOnScreenSet={numberOnScreenSet}
+              currentNumberSet={currentNumberSet}
+            />
             <Equal
               previousNumber={previousNumber}
               currentNumberSet={currentNumberSet}
