@@ -20,6 +20,7 @@ const Plus: React.FC<Plus> = ({
 }) => {
   return (
     <button
+      className="plus"
       onClick={() => {
         if (previousNumber == "0") {
           previousNumberSet(currentNumber);

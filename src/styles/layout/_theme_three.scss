@@ -1,0 +1,51 @@
+.dark {
+  background-color: $t-three-main-bg;
+  color: $t-three-key-text;
+  .screen {
+    background-color: $t-three-keypad-bg;
+    color: $t-three-key-text;
+  }
+  .keypad {
+    background-color: $t-three-keypad-bg;
+    .row button {
+      color: $t-three-key-text;
+      background-color: $t-three-keypad-bg;
+      box-shadow: 3px 2px $t-three-key-shadow;
+      &:hover {
+        background-color: $t-three-key-text;
+      }
+    }
+    .equals {
+      color: $t-three-delete-text;
+    }
+  }
+
+  .keypad .row .deleteBtn,
+  .keypad .row .reset {
+    background-color: $t-three-delete;
+    color: $t-three-key-text;
+    &:hover {
+      background-color: $t-three-equal-bg;
+    }
+  }
+  .keypad .row .equals {
+    background-color: $t-three-equal-bg;
+    color: $t-three-equal-text;
+    &:hover {
+      background-color: $t-three-equal-bg;
+    }
+  }
+  .top .toggle_switch {
+    background-color: $t-three-keypad-bg;
+    border: 1px solid white;
+    span {
+      background-color: $t-three-equal-bg;
+    }
+  }
+  .top_name {
+    color: $t-three-key-text;
+  }
+  .toggle_numbers {
+    color: $t-three-key-text;
+  }
+}

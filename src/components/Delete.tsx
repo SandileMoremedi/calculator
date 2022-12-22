@@ -5,6 +5,7 @@ interface Delete {
 const Delete: React.FC<Delete> = ({ currentNumberSet }) => {
   return (
     <button
+      className="deleteBtn"
       onClick={() => {
         currentNumberSet((val) => val.slice(0, val.length - 1));
       }}

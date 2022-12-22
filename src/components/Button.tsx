@@ -4,12 +4,14 @@ interface numberButton {
   currentNumberSet: React.Dispatch<SetStateAction<string>>;
   numberOnScreenSet: React.Dispatch<SetStateAction<string>>;
   numberOnScreen: string;
+  className: string;
 }
 const Button: React.FC<numberButton> = ({
   num,
   currentNumberSet,
   numberOnScreenSet,
   numberOnScreen,
+  className,
 }) => {
   return (
     <button
@@ -19,6 +21,7 @@ const Button: React.FC<numberButton> = ({
         }
         currentNumberSet((val) => val + `${num}`);
       }}
+      className={className}
     >
       {num}
     </button>

@@ -1,17 +1,13 @@
 .keypad {
   display: flex;
   flex-direction: column;
-  // gap: 50px;
   margin: 40px 0;
-  background-color: $t-one-keypad-bg;
+
+  border-radius: 20px;
   .row {
     display: grid;
     gap: 20px;
-    padding: 20px;
-    button {
-      padding: 5px 20px;
-      cursor: pointer;
-    }
+    padding: 10px;
   }
   .row.four {
     grid-template-columns: repeat(4, 1fr);

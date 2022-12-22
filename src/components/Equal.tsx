@@ -1,6 +1,4 @@
 import React from "react";
-const { log } = console;
-
 // We need to make switch/cases that check which operator we are using
 interface Equal {
   operator: string;
@@ -43,29 +41,56 @@ const Equal: React.FC<Equal> = ({
   ) => {
     switch (operatorS) {
       case "plus":
-        let a = PlusF(parseInt(currentNum), parseInt(previousNum));
-        previousNumberSet(`${a}`);
-        numberOnScreenSet("previousNumber");
-        currentNumberSet("0");
-        log(previousNumber, currentNumber);
+        if (currentNum.includes(".") && previousNum.includes(".")) {
+          let a = PlusF(parseInt(currentNum), parseInt(previousNum));
+          previousNumberSet(`${a}`);
+          numberOnScreenSet("previousNumber");
+          currentNumberSet("0");
+        } else {
+          let a = PlusF(parseFloat(currentNum), parseFloat(previousNum));
+          previousNumberSet(`${a}`);
+          numberOnScreenSet("previousNumber");
+          currentNumberSet("0");
+        }
         break;
       case "minus":
-        let b = MinusF(parseInt(currentNum), parseInt(previousNum));
-        previousNumberSet(`${b}`);
-        currentNumberSet("0");
-        numberOnScreenSet("previousNumber");
+        if (currentNum.includes(".") && previousNum.includes(".")) {
+          let b = MinusF(parseInt(currentNum), parseInt(previousNum));
+          previousNumberSet(`${b}`);
+          numberOnScreenSet("previousNumber");
+          currentNumberSet("0");
+        } else {
+          let b = MinusF(parseFloat(currentNum), parseFloat(previousNum));
+          previousNumberSet(`${b}`);
+          numberOnScreenSet("previousNumber");
+          currentNumberSet("0");
+        }
         break;
       case "multiply":
-        let c = MultiplyF(parseInt(currentNum), parseInt(previousNum));
-        previousNumberSet(`${c}`);
-        currentNumberSet("0");
-        numberOnScreenSet("previousNumber");
+        if (currentNum.includes(".") && previousNum.includes(".")) {
+          let c = MultiplyF(parseInt(currentNum), parseInt(previousNum));
+          previousNumberSet(`${c}`);
+          numberOnScreenSet("previousNumber");
+          currentNumberSet("0");
+        } else {
+          let c = MultiplyF(parseFloat(currentNum), parseFloat(previousNum));
+          previousNumberSet(`${c}`);
+          numberOnScreenSet("previousNumber");
+          currentNumberSet("0");
+        }
         break;
       case "divide":
-        let d = DivideF(parseInt(currentNum), parseInt(previousNum));
-        previousNumberSet(`${d}`);
-        currentNumberSet("0");
-        numberOnScreenSet("previousNumber");
+        if (currentNum.includes(".") && previousNum.includes(".")) {
+          let d = DivideF(parseInt(currentNum), parseInt(previousNum));
+          previousNumberSet(`${d}`);
+          numberOnScreenSet("previousNumber");
+          currentNumberSet("0");
+        } else {
+          let d = DivideF(parseFloat(currentNum), parseFloat(previousNum));
+          previousNumberSet(`${d}`);
+          numberOnScreenSet("previousNumber");
+          currentNumberSet("0");
+        }
         break;
       default:
         previousNumberSet(`${currentNum}`);
@@ -74,6 +99,7 @@ const Equal: React.FC<Equal> = ({
   };
   return (
     <button
+      className="equals"
       onClick={() => {
         CalculateF(operator, currentNumber, previousNumber);
       }}

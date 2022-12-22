@@ -1,7 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
-const Top: React.FC = () => {
+interface Top {
+  currentTheme: object;
+  currentThemeSet: React.Dispatch<React.SetStateAction<{ theme: string }>>;
+}
+const Top: React.FC<Top> = ({ currentTheme, currentThemeSet }) => {
   const [toggle, toggleSet] = useState({ theme: "default" });
   useEffect(() => {
     // Setting the settings for the theme usage using
@@ -24,21 +27,21 @@ const Top: React.FC = () => {
         <div className="toggle_numbers">
           <span
             onClick={() => {
-              toggleSet({ theme: "default" });
+              currentThemeSet({ theme: "default" });
             }}
           >
             1
           </span>
           <span
             onClick={() => {
-              toggleSet({ theme: "light" });
+              currentThemeSet({ theme: "light" });
             }}
           >
             2
           </span>
           <span
             onClick={() => {
-              toggleSet({ theme: "dark" });
+              currentThemeSet({ theme: "dark" });
             }}
           >
             3

@@ -15,7 +15,7 @@ import Row from "./components/Row";
 import { useState } from "react";
 import "./styles/main.scss";
 const App = () => {
-  const { log } = console;
+  const [currentTheme, currentThemeSet] = useState({ theme: "default" });
   const [currentNumber, currentNumberSet] = useState("0");
   const [previousNumber, previousNumberSet] = useState("0");
   const [numberOnScreen, numberOnScreenSet] = useState("currentNumber");
@@ -32,9 +32,9 @@ const App = () => {
     }
   }
   return (
-    <div className="app">
+    <div className={currentTheme.theme}>
       <Container>
-        <Top />
+        <Top currentTheme={currentTheme} currentThemeSet={currentThemeSet} />
         <Screen
           currentNumber={currentNumber}
           previousNumber={previousNumber}
@@ -47,18 +47,21 @@ const App = () => {
               num={7}
               currentNumberSet={currentNumberSet}
               numberOnScreen={numberOnScreen}
+              className="7"
             />
             <Button
               numberOnScreenSet={numberOnScreenSet}
               num={8}
               currentNumberSet={currentNumberSet}
               numberOnScreen={numberOnScreen}
+              className="8"
             />
             <Button
               numberOnScreenSet={numberOnScreenSet}
               num={9}
               currentNumberSet={currentNumberSet}
               numberOnScreen={numberOnScreen}
+              className="9"
             />
             <Delete currentNumberSet={currentNumberSet} />
           </Row>
@@ -68,18 +71,21 @@ const App = () => {
               num={4}
               currentNumberSet={currentNumberSet}
               numberOnScreen={numberOnScreen}
+              className="4"
             />
             <Button
               numberOnScreenSet={numberOnScreenSet}
               num={5}
               currentNumberSet={currentNumberSet}
               numberOnScreen={numberOnScreen}
+              className="5"
             />
             <Button
               numberOnScreenSet={numberOnScreenSet}
               num={6}
               currentNumberSet={currentNumberSet}
               numberOnScreen={numberOnScreen}
+              className="6"
             />
             <Plus
               currentNumberSet={currentNumberSet}
@@ -97,38 +103,56 @@ const App = () => {
               num={1}
               currentNumberSet={currentNumberSet}
               numberOnScreen={numberOnScreen}
+              className="1"
             />
             <Button
               numberOnScreenSet={numberOnScreenSet}
               num={2}
               currentNumberSet={currentNumberSet}
               numberOnScreen={numberOnScreen}
+              className="2"
             />
             <Button
               numberOnScreenSet={numberOnScreenSet}
               num={3}
               currentNumberSet={currentNumberSet}
               numberOnScreen={numberOnScreen}
+              className="3"
             />
-            <Minus />
+            <Minus
+              previousNumber={previousNumber}
+              currentNumberSet={currentNumberSet}
+              previousNumberSet={previousNumberSet}
+              currentNumber={currentNumber}
+              numberOnScreenSet={numberOnScreenSet}
+              operatorSet={operatorSet}
+            />
           </Row>
           <Row number="four">
-            <Dot />
+            <Dot currentNumberSet={currentNumberSet} />
             <Button
               numberOnScreenSet={numberOnScreenSet}
               num={0}
               currentNumberSet={currentNumberSet}
               numberOnScreen={numberOnScreen}
+              className="0"
             />
             <Divide
-            // currentNumberSet={currentNumberSet}
-            // previousNumberSet={previousNumberSet}
-            // currentNumber={currentNumber}
-            // numberOnScreenSet={numberOnScreenSet}
-            // operatorSet={operatorSet}
-            // operator={operator}
+              previousNumber={previousNumber}
+              currentNumberSet={currentNumberSet}
+              previousNumberSet={previousNumberSet}
+              currentNumber={currentNumber}
+              numberOnScreenSet={numberOnScreenSet}
+              operatorSet={operatorSet}
             />
-            <Multiply />
+            <Multiply
+              previousNumber={previousNumber}
+              currentNumberSet={currentNumberSet}
+              previousNumberSet={previousNumberSet}
+              currentNumber={currentNumber}
+              numberOnScreenSet={numberOnScreenSet}
+              operatorSet={operatorSet}
+            />
           </Row>
           <Row number="two">
             <Reset

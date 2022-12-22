@@ -1,0 +1,20 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.0.3
+  cypress: cypress-io/cypress@2.2.0
+  jobs:
+  build_and_test: Calculator Set Up
+    executor: node/default # use the default executor defined within the orb
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          command: yarn dev
+          name: Run dev server
+      - run:
+          command: yarn test
+          name: Tests the app
+      - persist_to_workspace:
+          root: ~/project
+          paths: . 

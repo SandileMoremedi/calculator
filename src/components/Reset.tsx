@@ -11,6 +11,7 @@ const Reset: React.FC<Reset> = ({
 }) => {
   return (
     <button
+      className="reset"
       onClick={() => {
         previousNumberSet("0");
         currentNumberSet("0");

@@ -1,0 +1,47 @@
+.light {
+  background-color: $t-two-main-bg;
+  color: $t-two-screen-text;
+  .screen {
+    background-color: $t-two-screen-bg;
+    color: $t-two-key-color;
+  }
+  .keypad {
+    background-color: $t-two-keypad-bg;
+    .row button {
+      color: $t-two-key-color;
+      box-shadow: 3px 2px $t-two-key-shadow;
+      &:hover {
+        background-color: $t-two-screen-text;
+      }
+    }
+  }
+
+  .keypad .row .deleteBtn,
+  .keypad .row .reset {
+    background-color: $t-two-delete;
+    color: $t-two-screen-text;
+    &:hover {
+      background-color: $t-two-equal-bg;
+    }
+  }
+  .keypad .row .equals {
+    background-color: $t-two-equal-bg;
+    color: $t-two-screen-text;
+    &:hover {
+      background-color: $t-two-equal-bg;
+    }
+  }
+  .top .toggle_switch {
+    background-color: $t-two-keypad-bg;
+    border: 1px solid white;
+    span {
+      background-color: $t-two-equal-bg;
+    }
+  }
+  .top_name {
+    color: $t-two-key-color;
+  }
+  .toggle_numbers {
+    color: $t-two-key-color;
+  }
+}
