@@ -4,7 +4,7 @@ orbs:
   cypress: cypress-io/cypress@2.2.0
   jobs:
   build_and_test: Calculator Set Up
-    executor: node/default 
+    executor: node/default
     steps:
       - checkout
       - node/install-packages:
