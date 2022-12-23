@@ -2,41 +2,41 @@ version: 2.1
 orbs:
   node: circleci/node@5.0.3
   cypress: cypress-io/cypress@2.2.0
-  jobs:
-    build_and_test:
-      executor: node/default
-      steps:
-        - checkout
-        - node/install-packages:
-            pkg-manager: yarn
-        - restore_cache:
-            key: dependency-cache-{{ checksum "yarn.lock" }}
-        - run:
-            name: Install Dependencies
-            command: yarn install
-        - save_cache:
-            key: dependency-cache-{{ checksum "yarn.lock" }}
-            paths:
-              - ./node_modules
-        - run:
-            command: yarn dev
-            name: Run dev server
-        - run:
-            command: yarn test
-            name: Tests the app
-        - run:
-            name: Deploy to Netlify
-            command: ./node_modules/.bin/netlify deploy --site $SITE_ID --auth $CIRCLE_CI --prod --dir=build
-        - save_cache:
-            key: app-build-cache-{{ .Branch }}
-            paths:
-              - ./build
-  workflows:
-    version: 2
-    build-deploy:
-      jobs:
-        - build_and_test:
-            filters:
-              branches:
-                only:
-                  - main
+jobs:
+  build_and_test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+        pkg-manager: yarn
+      - restore_cache:
+        key: dependency-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          command: yarn dev
+          name: Run dev server
+      - run:
+        command: yarn test
+        name: Tests the app
+      - run:
+          name: Deploy to Netlify
+          command: ./node_modules/.bin/netlify deploy --site $SITE_ID --auth $CIRCLE_CI --prod --dir=build
+      - save_cache:
+          key: app-build-cache-{{ .Branch }}
+          paths:
+            - ./build
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build_and_test:
+          filters:
+            branches:
+              only:
+                - main
